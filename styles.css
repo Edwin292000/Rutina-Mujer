@@ -1,0 +1,64 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+h1,
+h2 {
+  color: #333;
+}
+
+/* Accordion */
+.accordion-item {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.accordion-header {
+  width: 100%;
+  background: #f0f0f0;
+  border: none;
+  padding: 12px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+}
+.accordion-body {
+  padding: 12px;
+  background: #fafafa;
+}
+.accordion-item.activa .accordion-header {
+  background: #e8f5e9;
+  border-left: 5px solid #4caf50;
+  font-weight: bold;
+}
+
+/* Rutina */
+#rutina {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+.ejercicio-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  background: #fff;
+}
+.ejercicio-card.restringido {
+  background: #ffebee;
+  border-color: #f44336;
+  color: #b71c1c;
+  opacity: 0.7;
+}
