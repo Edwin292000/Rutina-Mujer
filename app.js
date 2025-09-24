@@ -5,7 +5,7 @@ createApp({
     return {
       ciclo: localStorage.getItem("ciclo")
         ? Number(localStorage.getItem("ciclo"))
-        : 28,
+        : 31,
       ultimoPeriodo:
         localStorage.getItem("ultimoPeriodo") ||
         new Date().toISOString().split("T")[0],
@@ -13,7 +13,7 @@ createApp({
       diaSeleccionado: localStorage.getItem("diaSeleccionado") || "",
       fases: [
         {
-          nombre: "Fase Menstrual (Días 1-5)",
+          nombre: "Fase Menstrual (Días 1-8)",
           descripcion:
             "Niveles hormonales bajos, posible cansancio. Rutina ligera: yoga, caminatas, estiramientos.",
           nutricion:
@@ -21,7 +21,7 @@ createApp({
           abierta: false,
         },
         {
-          nombre: "Fase Folicular (Días 6-14)",
+          nombre: "Fase Folicular (Días 9-17)",
           descripcion:
             "Aumenta la energía, ideal para entrenamientos intensos y progresivos.",
           nutricion:
@@ -29,7 +29,7 @@ createApp({
           abierta: false,
         },
         {
-          nombre: "Ovulación (Alrededor del Día 14)",
+          nombre: "Ovulación (Alrededor del Día 17)",
           descripcion:
             "Mayor energía y fuerza. Momento ideal para entrenamientos de alta intensidad.",
           nutricion:
@@ -37,7 +37,7 @@ createApp({
           abierta: false,
         },
         {
-          nombre: "Fase Lútea (Días 15-28)",
+          nombre: "Fase Lútea (Días 18-31)",
           descripcion:
             "Progesterona alta, posible fatiga. Mejor rutinas suaves, resistencia ligera.",
           nutricion:
@@ -244,10 +244,10 @@ createApp({
       const hoy = new Date();
       const diff = Math.floor((hoy - inicio) / (1000 * 60 * 60 * 24));
       const diaCiclo = (diff % this.ciclo) + 1;
-      if (diaCiclo <= 5) return "Fase Menstrual (Días 1-5)";
-      if (diaCiclo <= 14) return "Fase Folicular (Días 6-14)";
-      if (diaCiclo === 14) return "Ovulación (Alrededor del Día 14)";
-      return "Fase Lútea (Días 15-28)";
+      if (diaCiclo <= 8) return "Fase Menstrual (Días 1-8)";
+      if (diaCiclo <= 17) return "Fase Folicular (Días 9-17)";
+      if (diaCiclo === 17) return "Ovulación (Alrededor del Día 17)";
+      return "Fase Lútea (Días 18-31)";
     },
     mostrarRutina() {
       return this.diaSeleccionado !== "";
